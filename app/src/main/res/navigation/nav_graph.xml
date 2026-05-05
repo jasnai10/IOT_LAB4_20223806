@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/categoriesFragment">
+
+    <!-- Fragmento Categories — destino inicial (home) -->
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.iot_lab4_20223806.fragments.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories">
+
+        <!-- Clase 6.2 diap. 13 — action hacia MealsFragment -->
+        <action
+            android:id="@+id/action_categories_to_meals"
+            app:destination="@id/mealsFragment"
+            app:popUpTo="@id/categoriesFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <!-- Fragmento Meals -->
+    <fragment
+        android:id="@+id/mealsFragment"
+        android:name="com.example.iot_lab4_20223806.fragments.MealsFragment"
+        android:label="fragment_meals"
+        tools:layout="@layout/fragment_meals">
+
+        <!-- action hacia RecipeFragment -->
+        <action
+            android:id="@+id/action_meals_to_recipe"
+            app:destination="@id/recipeFragment"
+            app:popUpTo="@id/mealsFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <!-- Fragmento Recipe -->
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.iot_lab4_20223806.fragments.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe"/>
+
+</navigation>

@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#0069C0">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Nombre de la aplicación -->
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🍽️ GastroApp"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Imagen de gastronomía -->
+        <ImageView
+            android:id="@+id/ivGastronomia"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:src="@drawable/img_gastronomia"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen de gastronomía"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Botón Ingresar -->
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Ingresar"
+            android:textSize="18sp"
+            android:textColor="#0069C0"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Elaborado por -->
+        <TextView
+            android:id="@+id/tvElaboradoPor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elaborado por: Jair Aguilera / 20223806"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
