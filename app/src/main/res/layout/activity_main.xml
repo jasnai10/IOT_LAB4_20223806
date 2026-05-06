@@ -2,11 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0069C0">
+    android:background="#0069C0"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:padding="24dp">
@@ -20,8 +21,7 @@
             android:textSize="32sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="70dp"/>
 
         <!-- Imagen de gastronomía -->
         <ImageView
@@ -31,7 +31,7 @@
             android:src="@drawable/img_gastronomia"
             android:scaleType="centerCrop"
             android:contentDescription="Imagen de gastronomía"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="90dp"/>
 
         <!-- Botón Ingresar -->
         <Button
@@ -42,7 +42,7 @@
             android:textSize="18sp"
             android:textColor="#0069C0"
             android:backgroundTint="#FFFFFF"
-            android:layout_marginBottom="32dp"/>
+            android:layout_marginBottom="70dp"/>
 
         <!-- Elaborado por -->
         <TextView
@@ -51,8 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Elaborado por: Jair Aguilera / 20223806"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:layout_marginBottom="24dp"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
 

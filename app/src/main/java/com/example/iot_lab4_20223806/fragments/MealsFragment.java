@@ -68,16 +68,22 @@ public class MealsFragment extends Fragment {
             @Override
             public void onResponse(@NonNull Call<MealResponse> call,
                                    @NonNull Response<MealResponse> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.isSuccessful() && response.body() != null
+                        && response.body().getMeals() != null
+                        && !response.body().getMeals().isEmpty()) {
                     mostrarMeals(response.body().getMeals());
                 } else {
-                    Toast.makeText(getContext(), "Error al obtener platos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),
+                            "No se encontraron platos para esta categoría",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<MealResponse> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "Fallo de conexión: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),
+                        "Fallo de conexión: " + t.getMessage(),
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -87,16 +93,23 @@ public class MealsFragment extends Fragment {
             @Override
             public void onResponse(@NonNull Call<MealResponse> call,
                                    @NonNull Response<MealResponse> response) {
-                if (response.isSuccessful() && response.body() != null) {
+                if (response.isSuccessful() && response.body() != null
+                        && response.body().getMeals() != null
+                        && !response.body().getMeals().isEmpty()) {
                     mostrarMeals(response.body().getMeals());
                 } else {
-                    Toast.makeText(getContext(), "Error al obtener platos", Toast.LENGTH_SHORT).show();
+                    // API devuelve meals:null cuando no encuentra resultados
+                    Toast.makeText(getContext(),
+                            "No se encontraron platos con ese ingrediente",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<MealResponse> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "Fallo de conexión: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),
+                        "Fallo de conexión: " + t.getMessage(),
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
